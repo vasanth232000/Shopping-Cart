@@ -1,11 +1,11 @@
-<h1 class="pro-head">{{heading}}</h1>
 
-<div class="contenedorCards" >
-    <div class="card" *ngFor="let item of phone">
+
+
+<div class="contenedorCards">
+    <div class="card" *ngFor="let item of products">
         <div class="wrapper">
             <div class="colorProd"></div>
-            <div class="imgProd"  [replaceUrl]="true" routerLink="../product/{{item.id}}"
-                style="background-image: url({{item?.thumbnail}});">
+            <div class="imgProd" routerLink="../product/{{item.id}}" style="background-image: url({{item?.thumbnail}});">
             </div>
             <div class="infoProd">
                 <p class="nombreProd">{{item?.description}}</p>

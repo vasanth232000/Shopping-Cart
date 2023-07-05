@@ -32,4 +32,12 @@ export class ProductsService {
           })
         )
   }
+
+  getSingleProduct(id:any){
+    return this.http.get<any>(`${environment.api}/${id}`).pipe(
+      map((res:any) => {
+        return res
+      })
+    )
+  }
 }

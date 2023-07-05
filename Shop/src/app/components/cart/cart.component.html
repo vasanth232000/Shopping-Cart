@@ -1,0 +1,49 @@
+<section class="cart_wrapper">
+    <div class="cart_lists">
+        <div class="cart_title">
+            <span class="material-icons-outlined"><i class="fa-solid fa-bag-shopping"></i></span>
+            Your Shopping Cart
+        </div>
+
+        <div class="cart_list_wrap">
+            <div class="cart_responsive" *ngFor="let item of cartItems">
+                <div class="tr_item">
+                    <div class="td_item item_img">
+                        <img src="{{item?.thumbnail}}" />
+                    </div>
+                    <div class="td_item item_name">
+                        <label class="main">{{item.title}}</label>
+                        <label class="sub">{{item.category}}</label>
+                    </div>
+                    <div class="td_item item_color">
+                        <label>{{item.rating}}</label>
+                    </div>
+                    <div class="td_item item_qty">
+                        <p class="m-0">{{item.quantity}}</p>
+                    </div>
+                    <div class="td_item item_price">
+                        <label>$ {{item.price}}</label>
+                    </div>
+                    <div class="td_item item_remove">
+                        <span (click)="deleteItem(item.id)" class="material-icons-outlined"><i class="fa-solid fa-circle-xmark"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="back_cart">
+                    <a href="#back">
+                        <span class="material-icons-outlined"><i class="fa-solid fa-arrow-left"></i></span>
+                        Back to Shop
+                    </a>
+                </div>
+                <div>
+                    <button class="btn btn-danger" (click)="deleteAll()">Remove All</button>
+                </div>
+                <div class="subtotal">
+                    <label>Subtotal: </label>
+                    <strong>$2451.00</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
