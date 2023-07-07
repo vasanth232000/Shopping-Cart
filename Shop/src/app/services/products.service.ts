@@ -10,9 +10,14 @@ export class ProductsService {
   constructor(public http:HttpClient) { }
 
   getProducts(){
+    let product;
     return this.http.get<any>(environment.api).pipe(
       map((res:any) => {
-        return res
+        product = res.products;
+        product.map((item:any)=>{
+          Object.assign(item,{quantity:1,total:item.price});
+        })
+        return product;
       })
     )
   }
@@ -25,6 +30,7 @@ export class ProductsService {
             curr = res.products;
             curr.map((item:any)=>{
               if(categoryId == item.category){
+                Object.assign(item,{quantity:1,total:item.price});
                 catARR.push(item);
               }
             })
@@ -33,9 +39,12 @@ export class ProductsService {
         )
   }
 
+
   getSingleProduct(id:any){
     return this.http.get<any>(`${environment.api}/${id}`).pipe(
       map((res:any) => {
+        Object.assign(res,{quantity:1,total:res.price});
+        console.log(res);
         return res
       })
     )

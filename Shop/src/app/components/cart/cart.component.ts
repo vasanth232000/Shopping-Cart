@@ -20,6 +20,8 @@ deleteAll(){
   this.cart.deleteeveryitem();
 }
 
+
+
 ngOnInit(): void {
     this.cart.getProducts().subscribe((res:any)=>{
       this.cartItems = res;

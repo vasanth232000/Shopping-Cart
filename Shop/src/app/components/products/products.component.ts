@@ -21,14 +21,9 @@ addtocart(product:any){
 
 ngOnInit(): void {
     this.productsService.getProducts().subscribe(
-      (res:any)=>{
-        this.products = res.products;
-      }
-    )
-
-    this.cartService.getProducts().subscribe(
-      (res:any)=>{
-        console.log('products', res);
+      (res)=>{
+        this.products = res;
+        console.log(this.products);
       }
     )
 }

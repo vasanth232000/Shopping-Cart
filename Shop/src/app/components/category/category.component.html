@@ -4,7 +4,7 @@
     <div class="card" *ngFor="let item of phone">
         <div class="wrapper">
             <div class="colorProd"></div>
-            <div class="imgProd"  [replaceUrl]="true" routerLink="../product/{{item.id}}"
+            <div class="imgProd"  [replaceUrl]="true" routerLink="product/{{item.id}}"
                 style="background-image: url({{item?.thumbnail}});">
             </div>
             <div class="infoProd">

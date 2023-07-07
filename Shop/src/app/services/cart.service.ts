@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,25 +14,32 @@ export class CartService {
   }
 
   addtocart(product:any){
-    if(product.quantity){
-    let count = 0;
-    if(this.cartItems.includes(product)){
+    if(this.cartItems.some((item:any) => item.id === product.id)){
       this.cartItems.map((item:any)=>{
         if(item.id === product.id){
-          console.log(item);
                   item.quantity++;
                   item.total *= item.quantity;
+                  console.log(item.quantity);
                 }
-      })
-    }else{
-      this.cartItems.push(product);
-    }}else{
-      Object.assign(product,{quantity:1,total:product.price});
-      this.cartItems.push(product);
-      console.log("workings");
-    }
+      })}else{
+        this.cartItems.push(product);
+      }
     this.myBehaviorSubject.next(this.cartItems);
     localStorage.setItem('cart', JSON.stringify(this.cartItems));
+  }
+
+  changeQuantity(id:any,value:any,product:any){
+    if(this.cartItems.some((item:any) => item.id == id)){
+    this.cartItems.map((item:any)=>{
+      if(item.id === id){
+        item.quantity = value;
+            }
+    })
+  }else{
+        this.cartItems.push(product);
+        this.myBehaviorSubject.next(this.cartItems);
+    localStorage.setItem('cart', JSON.stringify(this.cartItems));
+      }
   }
 
   deleteCartItem(id:any){

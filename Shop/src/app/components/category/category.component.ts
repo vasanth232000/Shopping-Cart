@@ -31,7 +31,7 @@ ngOnInit(): void {
   
     this.Products.getProducts().subscribe(
       (res:any)=>{
-        this.Product = res.products;
+        this.Product = res;
       }
     )
 

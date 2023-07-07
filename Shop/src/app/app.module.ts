@@ -10,6 +10,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductComponent } from './components/product/product.component';
 import { ProductsComponent } from './components/products/products.component';
 import { CartComponent } from './components/cart/cart.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatRippleModule} from '@angular/material/core';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {FormsModule} from '@angular/forms';
+import { NotifierModule } from 'angular-notifier';
 
 @NgModule({
   declarations: [
@@ -25,6 +31,12 @@ import { CartComponent } from './components/cart/cart.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MatRippleModule,
+    MatInputModule,
+    MatFormFieldModule,
+    FormsModule,
+    NotifierModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

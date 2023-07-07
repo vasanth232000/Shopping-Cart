@@ -100,6 +100,16 @@ p {
     text-wrap: balance;
 }
 
+.mat-mdc-text-field-wrapper {
+    padding: 10px 0px 0px !important;
+    height: auto;
+    flex: auto;
+}
+
+.quantity_label {
+    padding-bottom: 10px !important;
+}
+
 img {
     image-rendering: -webkit-optimize-contrast;
     image-rendering: -moz-crisp-edges;
@@ -288,3 +298,5 @@ img {
 a{
     text-decoration: none;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

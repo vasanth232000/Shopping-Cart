@@ -101,6 +101,10 @@
     row-gap: 0.5rem;
 }
 
+.price{
+        width: 33.33%;
+}
+
 .sizes-list {
     display: flex;
     column-gap: 0.25rem;
@@ -125,3 +129,13 @@
     color: var(--white-100);
     background-color: var(--brown-500);
 }
+
+.example-ripple-form-field {
+    margin: 0 12px 0 0;
+    width: 100% !important;
+}
+
+input{
+    padding-top: 20px !important;
+}
+
