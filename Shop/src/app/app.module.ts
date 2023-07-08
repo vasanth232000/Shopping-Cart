@@ -14,7 +14,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { NgToastModule } from 'ng-angular-popup'
+import { NgToastModule } from 'ng-angular-popup';
+import { CategoriesComponent } from './components/categories/categories.component'
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NgToastModule } from 'ng-angular-popup'
     CategoryComponent,
     ProductComponent,
     ProductsComponent,
-    CartComponent
+    CartComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,
