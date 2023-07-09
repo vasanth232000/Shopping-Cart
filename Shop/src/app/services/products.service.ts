@@ -34,6 +34,7 @@ export class ProductsService {
                 catARR.push(item);
               }
             })
+            console.log(catARR)
             return catARR;
           })
         )

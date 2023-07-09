@@ -1,7 +1,7 @@
 <h1 class="pro-head">{{heading}}</h1>
 
 <div class="contenedorCards" >
-    <div class="card" *ngFor="let item of phone">
+    <div class="card" *ngFor="let item of phone | filter:searchKey:'brand'">
         <div class="wrapper">
             <div class="colorProd"></div>
             <div class="imgProd"  routerLink="product/{{item.id}}"

@@ -7,10 +7,10 @@ import { CartService } from 'src/app/services/cart.service';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit{
-  products : any;
+  public products:any= [];
+  public key : string = '';
   public math = Math;
 constructor(private productsService: ProductsService,private cartService: CartService){
-  console.log('products', this.products);
 }
 
 addtocart(product:any){
@@ -21,10 +21,13 @@ addtocart(product:any){
 
 ngOnInit(): void {
     this.productsService.getProducts().subscribe(
-      (res)=>{
+      (res:any)=>{
         this.products = res;
-        console.log(this.products);
       }
     )
+
+    this.cartService.searchService.subscribe((res)=>{
+      this.key = res;
+    })
 }
 }

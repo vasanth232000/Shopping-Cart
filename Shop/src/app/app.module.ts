@@ -15,7 +15,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgToastModule } from 'ng-angular-popup';
-import { CategoriesComponent } from './components/categories/categories.component'
+import { CategoriesComponent } from './components/categories/categories.component';
+import { FilterpipePipe } from './shared/filterpipe.pipe';
+import { SearchComponent } from './components/search/search.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import { CategoriesComponent } from './components/categories/categories.componen
     ProductComponent,
     ProductsComponent,
     CartComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    FilterpipePipe,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +42,8 @@ import { CategoriesComponent } from './components/categories/categories.componen
     MatFormFieldModule,
     FormsModule,
     BrowserAnimationsModule,
-    NgToastModule
+    NgToastModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

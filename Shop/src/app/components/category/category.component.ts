@@ -16,8 +16,9 @@ export class CategoryComponent implements OnInit {
       
 
   public Product :any;
-  public phone:any[] = [];
+  public phone:any;
   public math = Math;
+  public searchKey : string = '';
 constructor(public Products : ProductsService,public cartService:CartService,public router : Router){  
 
 }
@@ -40,5 +41,9 @@ ngOnInit(): void {
         this.phone = res;
       }
     )
+
+    this.cartService.searchService.subscribe((res)=>{
+      this.searchKey = res;
+    })
 }
 }

@@ -9,6 +9,7 @@ import { NgToastService } from 'ng-angular-popup';
 export class CartService {
   
    myBehaviorSubject = new BehaviorSubject<any>([]);
+   searchService = new BehaviorSubject<string>('');
    cartItems : any = [];
    title:any = "Apple";
   constructor(private notify: NgToastService) {
@@ -24,7 +25,6 @@ export class CartService {
         if(item.id === product.id){
                   item.quantity++;
                   item.total *= item.quantity;
-                  console.log(item.quantity);
                   this.notify.success({detail:"Item Updated",summary:'You product quantity is increased',sticky:false,duration:2000,position: 'bottomRight'});
                 }
       })}else{

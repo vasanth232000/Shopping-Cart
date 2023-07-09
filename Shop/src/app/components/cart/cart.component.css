@@ -59,7 +59,7 @@ body {
     flex-wrap: wrap;
     background-color: white;
     box-shadow: 0 6px 32px rgba(0, 0, 0, 0.4);
-    margin: 100px auto;
+    margin: 150px auto 100px auto ;
     overflow: hidden;
 }
 

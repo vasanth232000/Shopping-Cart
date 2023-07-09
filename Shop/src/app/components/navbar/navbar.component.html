@@ -20,4 +20,11 @@
         </div>
         <button class="menu-block" routerLink="cart"><i class="fa-solid fa-bag-shopping"></i><span class="cart-count badge badge-success">{{count}}</span></button>
     </nav>
+    <nav class="navbar container">
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="Search Products by Brand" [(ngModel)]="search" (keyup)="searchFun($event)">
+            <a href="#"><img class="search-icon"
+                    src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
+        </div>
+    </nav>
 </header>

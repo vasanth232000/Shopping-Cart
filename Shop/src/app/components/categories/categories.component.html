@@ -1,5 +1,5 @@
 <div class="contenedorCards">
-    <div class="card" *ngFor="let item of products">
+    <div class="card" *ngFor="let item of products |filter:key:'brand'">
         <div class="wrapper">
             <div class="colorProd"></div>
             <div class="imgProd" routerLink="/product/{{item.id}}"

@@ -8,7 +8,13 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class NavbarComponent implements OnInit {
 count : any;
+search:string = '';
 constructor(private cartService: CartService){}
+
+searchFun(event: any){
+  this.search = event.target.value;
+  this.cartService.searchService.next(this.search);
+}
 
 ngOnInit(): void {
     this.cartService.getProducts().subscribe((res)=>{

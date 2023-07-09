@@ -13,6 +13,8 @@ export class CategoriesComponent implements OnInit {
   public products:any = [];
   public math = Math;
   public category :any;
+  public key:string = '';
+  public quantity:any = 0;
 constructor(public cart : CartService,public route : ActivatedRoute,public product : ProductsService){
 }
 
@@ -21,13 +23,22 @@ addtocart(product:any){
 }
 
 
+
+
 ngOnInit(): void {
   this.category = this.route.snapshot.url[0].path;
     this.product.getCategoryProduct(this.category).subscribe(
       (res)=>{
           this.products = res;
+          this.products.map((item:any)=>{
+            console.log(item.quantity);
+          })
       }
     )
+
+    this.cart.searchService.subscribe((res)=>{
+      this.key = res;
+    })
 }
 
 }
